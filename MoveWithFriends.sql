@@ -4,8 +4,7 @@ CREATE TABLE `Customer`
   LastName      VARCHAR(255) NOT NULL,
   SEX			      VARCHAR(6) NOT NULL,
   BirthDate     DATE,
-  PreferredSex  VARCHAR(10) NOT NULL
-;
+  PreferredSex  VARCHAR(10) NOT NULL;
 
 
 CREATE TABLE `Interest`
@@ -17,7 +16,7 @@ CREATE TABLE `Interest`
 
   CONSTRAINT
     FOREIGN KEY InterestFK ('CustomerID')
-    REFERENCES Customer ('CustomerID');
+    REFERENCE Customer ('CustomerID');
 
 CREATE TABLE `Timeslots`
   CustomerID  INT(10),
@@ -28,4 +27,4 @@ CREATE TABLE `Timeslots`
 
   CONSTRAINT
     FOREIGN KEY TimeslotFK ('CustomerID')
-    REFERENCES Customer ('CustomerID');
+    REFERENCE Customer ('CustomerID');
